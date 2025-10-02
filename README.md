@@ -1,6 +1,6 @@
 # MiniLLM
 
-A light LLM model.
+A light LLM model based on S. Raschka's book Build A Large Language Model.
 
 ## Steps - Based on schema.png
 
