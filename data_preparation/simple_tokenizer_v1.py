@@ -9,6 +9,7 @@ class SimpleTokenizerV1:
     def encode(self, text: str) -> List[int]:
         preprocessed_tokens_with_spaces = re.split(r'([,.:;?_!"()\']|--|\s)', text)
         preprocessed_tokens = [token.strip() for token in preprocessed_tokens_with_spaces if token.strip()]
+        preprocessed_tokens = [item if item in self._str_to_int else "<|unk|>" for item in preprocessed_tokens]
         token_ids = [self._str_to_int[token] for token in preprocessed_tokens]
         return token_ids
     

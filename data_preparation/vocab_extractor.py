@@ -9,8 +9,6 @@ def naive_token_extraction_from_path(path: str) -> Dict[str, int]:
 
 def _map_tokens_to_ids(tokens: List[str]) -> Dict[str, int]:
     all_words = sorted(set(tokens))
+    all_words.extend(["<|endoftext|>", "<|unk|>"])
     vocab = {word: idx for idx, word in enumerate(all_words)}
     return vocab
-
-tokens = naive_token_extraction_from_path("source-data/the-verdict.txt")
-_map_tokens_to_ids(tokens)
