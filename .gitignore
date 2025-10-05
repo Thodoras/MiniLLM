@@ -6,3 +6,6 @@
 *.user
 *.suo
 */__pycache__
+
+# Specific
+.torch_playground/
